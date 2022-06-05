@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories: Account Settings {% endblock %}
+{% block content %}
+
+<div class="container" style="max-width:70%;">
+<br/><br/>
+ <h1 style="font-family: lato; color:#7f5a37;">Account Settings.</h1>
+    <p class="lead">You can make changes to your account at any time.</p>
+</div>
+<br/><br/>
+<div class="container" style="max-width:70%;">
+<div class="mb-3">
+<form method="POST" style="color:#7f5a37;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <button class="btn" bgcolor="#7f5a37" style="color:white; border-radius: 20px 20px 20px 20px;">Save Changes</button>
+    
+
+</form>
+</div>
+</div>
+{% endblock %}
+

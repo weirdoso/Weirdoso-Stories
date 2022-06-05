@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories: Log In {% endblock %}
+{% block content %}
+{% load static %}
+
+
+<div class="container" style="max-width:80%; ">
+
+        <div class="row featurette">
+            <div class="col-md-5" >
+                <br> <br>
+                <p class="img">
+                    <img class="featurette-image img-fluid mx-auto"
+                         src="{% static 'theweirdosostories/images/bbg.png' %}" width="100%" height="100%"
+                         alt="Generic placeholder image">
+                </p>
+            </div>
+            <div class="col-md-7"> <br/>
+                <center><br/>
+                    <h1 style="font-family: lato; color:#7f5a37;">Hello there.</h1>
+                    <p class="lead">We prepared top picks for you.<br/> Dive right in to Weirdoso's latest stories. </p>
+
+                </center>
+                <br/><br/>
+
+                <div class="container" style="max-width:100%;">
+                    <div class="mb-3">
+                        <form method="POST" style="color:#7f5a37;">
+                            {% csrf_token %}
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" name="username" placeholder="Username">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                           name="password" placeholder="Password">
+                                </div>
+                                <center>
+                                    <button type="submit" class="btn" bgcolor="#7f5a37" style="color:white; border-radius: 20px 20px 20px 20px;">Log In
+                                    </button>
+                                </center>
+
+
+                            </form>
+                        </form>
+                    </div>
+
+                    <center>
+                        <p>Don't have an account? <a href="{% url 'register' %}"
+                                                     style="text-decoration: none; color: #7f5a37;">Sign Up</a>.</p>
+                    </center>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+

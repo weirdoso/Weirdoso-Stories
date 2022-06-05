@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories - Update Book {%  endblock %}
+{% block content %}
+{% if user.is_superuser %}
+<div class="container" style="max-width:80%; ">
+    <br/><br/>
+
+    <p class="lead">Make changes with the book:</p>
+    <h1 style="font-family: lato;  color: #7f5a37;">{{ bookpost.title }}.</h1>
+
+    <br/>
+    <br/>
+
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data" style="color:#7f5a37;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'home' %}" class="btn btn-outline-none"  style="color:#7f5a37; ">Cancel</a>
+            <button class="btn" bgcolor="#7f5a37" style="color:white; border-radius: 20px 20px 20px 20px;"">Save Changes</button>
+        </form>
+        <br/><br/><br/><br/>
+    </div>
+
+    {% else %}
+        <center>
+            <div class="container" style="max-width:100%; ">
+                <div class="row featurette">
+                    <div class=" "><br/><br/><br/><br/><br/>
+                        <h2 style="font-family: lato; color: #7f5a37;"><b>Uh Oh!</b></h2>
+                        <p class="lead">This page is not available for you.</p>
+                        <br/>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </center>
+    {% endif %}
+</div>
+{% endblock %}

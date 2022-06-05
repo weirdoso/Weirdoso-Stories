@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories - Add Comment {% endblock %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+<div class="container" style="max-width:60%;">
+    <br><br>
+    <h1 style="font-family: lato; color:#7f5a37;" > Add Comment </h1>
+    <p class="lead"></p>
+
+    <br/><br/>
+    <div class="mb-3">
+        <form method="POST" style="color:#7f5a37;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'home' %}" class="btn btn-none" style="color:#7f5a37;"> Cancel </a>
+            <button class="btn" bgcolor="#7f5a37"
+                                style="color:white; border-radius: 20px 20px 20px 20px;">Post Comment</button>
+
+
+        </form>
+    </div>
+    <br/><br/>
+    <script>
+    let name = "{{ user.id }}";
+    document.getElementById("show").value
+    = name;
+
+    </script>
+
+    {% else %}
+    <center>
+        <div class="container" style="max-width:100%; ">
+            <div class="row featurette">
+                <div class=" "><br/><br/><br/><br/><br/>
+                    <h2 style="font-family: lato; color: #7f5a37;"><b>Uh Oh!</b></h2>
+                    <p class="lead">You are not signed in to any account.</p>
+                    <br/>
+
+                    <a href="{% url 'login' %}" class="btn" style="color:#7f5a37; border-color:  #7f5a37; border-radius: 20px 20px 20px 20px;">Sign In</a>
+
+                </div>
+
+            </div>
+        </div>
+    </center>
+    {% endif %}
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+     #newsfeedimg img:hover {
+
+					transition: 0.6s ease;
+					transform: scale(1.1);
+					box-shadow: inset 0 0 0 25px #7f5a37;
+				}
+
+	  #newsfeedimg2 img:hover {
+					transition: 0.6s ease;
+					transform: scale(1.1);
+					box-shadow: inset 0 0 0 25px #7f5a37;
+				}
+</style>
+<br/>
+
+
+<div class="container" style="max-width:80%; ">
+
+<div class="row featurette">
+          <div class="col-md-6" ><br/><br/><br/><br/><br/>
+            <h2 style="font-family: lato; color: #7f5a37;"><img src="{% static 'theweirdosostories/images/Weirdoso Stories Logo.png' %}" height="30" width="30"> e i r d o s o &nbsp;  s t o r i e s.</h2>
+                <p class="lead">Weirdoso is a young Filipino writer with a 300,000+ highest book reads and 2,000+
+                    followers on Wattpad</p>
+                <br/>
+
+                  <a href="{% url 'reading_lists' %}" class="btn"   style="color:#7f5a37; border-color:  #7f5a37; border-radius: 20px 20px 20px 20px;">Explore
+                Books</a>
+
+          </div>
+          <div class="col-md-6" >
+
+                <p class="img">
+                <img class="featurette-image img-fluid mx-auto" src="{% static 'theweirdosostories/images/brown bg.png' %}" width="100%" height="100%" alt="Generic placeholder image">
+                </p>
+          </div>
+
+
+
+</div>
+ <br/>
+
+
+
+    <br/>
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h3 class="featurette-heading">Top Picks <span   style=" color: #725145;">For You</span>.</h3>
+            <p class="lead">With over 100,000+ reads in Wattpad Platform.</p>
+        </div>
+
+        <div style="display:inline-block; padding:15px;float:right;" id="newsfeedimg2">
+            <center>
+                <a href="{% url 'reading_lists' %}" style="text-decoration: none;">
+                <img src="{% static 'theweirdosostories/images/My favorite Pain.PNG' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320"  >
+
+                <img src="{% static 'theweirdosostories/images/Dear Bed.jpg' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320">
+
+                <img src="{% static 'theweirdosostories/images/Sore.PNG' %}" style="object-fit:scale-down;padding:10px;"
+                     height="320">   </a>
+            </center>
+        </div>
+
+    </div>
+
+    <br/><br/><br/><br/>
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h3 class="featurette-heading">Ongoing <span   style=" color: #725145;">Series</span>.</h3>
+            <p class="lead">Read the latest addition to Fraternity and Romance world now!</p>
+        </div>
+
+        <div style="display:inline-block; padding:15px;float:right;" id="newsfeedimg">
+            <center><a href="{% url 'reading_lists' %}" style="text-decoration: none;">
+                <img src="{% static 'theweirdosostories/images/215475912-352-k205771.jpg' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320">
+                <img src="{% static 'theweirdosostories/images/215701550-256-k205976.jpg' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320">
+                <img src="{% static 'theweirdosostories/images/232318405-352-k322073.jpg' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320">
+                <img src="{% static 'theweirdosostories/images/243812914-288-k208571.jpg' %}"
+                     style="object-fit:scale-down;padding:10px;" height="320"></a>
+            </center>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

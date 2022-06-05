@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories - Subscribe to Newsletter {% endblock %}
+{% block content %}
+{% load static %}
+<div class="container" style="max-width:60%;">
+    <br><br>
+    <h1 style="font-family: lato; color:#7f5a37;" > Subscribe to our Newsletter! </h1>
+    <p class="lead"></p>
+
+    <br/><br/>
+    <div class="mb-3">
+        <form method="POST" style="color:#7f5a37;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'home' %}" class="btn btn-none" style="color:#7f5a37;"> Cancel </a>
+            <button class="btn" bgcolor="#7f5a37"
+                                style="color:white; border-radius: 20px 20px 20px 20px;">Submit</button>
+
+
+        </form>
+    </div>
+    <br/><br/>
+
+
+
+
+</div>
+{% endblock %}
+

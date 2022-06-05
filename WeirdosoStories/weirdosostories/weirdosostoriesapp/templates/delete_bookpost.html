@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Weirdoso Stories - Delete Book  {%  endblock %}
+{% block content %}
+{% if user.is_superuser %}
+<center>
+    <div class="container" style="max-width:80%;">
+        <br/><br/><br/><br/>
+
+        <h4 style="font-family: lato;">You are about to delete <i><span style="color: #7f5a37;">{{ bookpost.title }}</span></i>.</h4>
+        <p class="lead">Do you wish to continue?</p>
+
+        <br/>
+        <br/>
+
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                <a href="{% url 'home' %}" class="btn btn-outline-none" style="color:#7f5a37;">No</a>
+                <button class="btn" bgcolor="#7f5a37" style="color: white; border-radius: 20px 20px 20px 20px;">Yes</button>
+
+            </form>
+        </div>
+    </div>
+</center>
+{% else %}
+<center>
+    <div class="container" style="max-width:100%; ">
+        <div class="row featurette">
+            <div class=" "><br/><br/><br/><br/><br/>
+                <h2 style="font-family: lato; color: #7f5a37;"><b>Uh Oh!</b></h2>
+                <p class="lead">This page is not available for you.</p>
+                <br/>
+
+
+            </div>
+
+        </div>
+    </div>
+</center>
+{% endif %}
+</div>
+{% endblock %}

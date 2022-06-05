@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Weirdoso Stories - Subscribers {%  endblock %}
+{% block content %}
+{% if user.is_superuser %}
+<style>
+     #header img:hover {
+					filter: opacity(50%);
+					transition: 0.6s ease;
+
+
+				}
+</style>
+<br/>
+<div class="container" style="max-width:80%; ">
+
+    <div class="row featurette">
+        <div class="col"><br/>
+            <h2 style="font-family: lato; color: #7f5a37;"> Newsletter Subscribers</h2><br/>
+            <p class="lead">The following Email address were entered by unknown subscribers who want to receive newsletters from Weirdoso. </p>
+            <br/>
+            {% for subscribers in object_list %}
+                <small style="font-family: lato; color: #7f5a37;"> {{ subscribers.emailaddress }}</small> <br/>
+
+            {% endfor %}
+            <p></p>
+
+
+            <br/>
+            <br/>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% else %}
+        <center>
+            <div class="container" style="max-width:100%; ">
+                <div class="row featurette">
+                    <div class=" "><br/><br/><br/><br/><br/>
+                        <h2 style="font-family: lato; color: #7f5a37;"><b>Uh Oh!</b></h2>
+                        <p class="lead">This page is not available for you.</p>
+                        <br/>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </center>
+{% endif %}
+{% endblock %}
