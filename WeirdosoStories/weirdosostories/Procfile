@@ -1,0 +1,1 @@
+web: gunicorn weirdosostories.wsgi -- log-file -
